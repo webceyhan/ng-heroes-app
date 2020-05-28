@@ -4,9 +4,10 @@
     <li
         *ngFor="let hero of heroes"
         (click)="onSelect(hero)"
-        class="list-group-item list-group-item-action"
+        [class.active]="hero === selectedHero"
+        class="list-group-item list-group-item-action pointer"
     >
-        <span class="badge badge-light">{{ hero.id }}</span>
+        <span class="badge badge-info p-2">{{ hero.id }}</span>
         <span class="ml-4">{{ hero.name }}</span>
     </li>
 </ul>
