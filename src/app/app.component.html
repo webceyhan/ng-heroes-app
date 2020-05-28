@@ -1,9 +1,15 @@
 <div class="container">
     <h1 class="display-4">{{ title }}</h1>
 
-    <br>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/heroes">Heroes</a>
+        </li>
+    </ul>
 
-    <app-heroes></app-heroes>
+    <br />
+
+    <router-outlet></router-outlet>
 
     <app-messages></app-messages>
 </div>
