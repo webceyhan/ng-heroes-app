@@ -1,12 +1,30 @@
-<h2>{{ hero.name | uppercase }} Details</h2>
-<div><span>id: </span>{{ hero.id }}</div>
+<h2>My Heroes</h2>
 
-<div class="form-group">
-    <label for="name">name: </label>
-    <input
-        class="form-control"
-        id="name"
-        [(ngModel)]="hero.name"
-        placeholder="name"
-    />
-</div>
+<ul class="list-group">
+    <li
+        *ngFor="let hero of heroes"
+        (click)="onSelect(hero)"
+        class="list-group-item list-group-item-action"
+    >
+        <span class="badge badge-light">{{ hero.id }}</span>
+        <span class="ml-4">{{ hero.name }}</span>
+    </li>
+</ul>
+
+<br />
+<br />
+
+<ng-container *ngIf="selectedHero">
+    <h2>{{ selectedHero.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{ selectedHero.id }}</div>
+
+    <div class="form-group">
+        <label for="name">name: </label>
+        <input
+            class="form-control"
+            id="name"
+            [(ngModel)]="selectedHero.name"
+            placeholder="name"
+        />
+    </div>
+</ng-container>
