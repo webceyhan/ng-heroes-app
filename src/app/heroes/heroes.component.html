@@ -1,9 +1,12 @@
-<div class="card-deck">
-    <div class="card" *ngFor="let hero of heroes">
-        <div class="card-body">
-            <h4 class="card-title">{{ hero.name | uppercase }} Details</h4>
-            <p class="card-text">id: {{ hero.id }}</p>
-            <p class="card-text">name: {{ hero.name }}</p>
-        </div>
-    </div>
+<h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{ hero.id }}</div>
+
+<div class="form-group">
+    <label for="name">name: </label>
+    <input
+        class="form-control"
+        id="name"
+        [(ngModel)]="hero.name"
+        placeholder="name"
+    />
 </div>

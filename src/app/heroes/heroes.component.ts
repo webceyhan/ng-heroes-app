@@ -7,12 +7,11 @@ import { Hero } from '../hero';
     styleUrls: ['./heroes.component.css'],
 })
 export class HeroesComponent implements OnInit {
-    heroes: Hero[] = [
-        { id: 1, name: 'Narco' },
-        { id: 2, name: 'Bombasto' },
-        { id: 3, name: 'Celeritas' },
-        { id: 4, name: 'Magneta' },
-    ];
+    hero: Hero = {
+        id: 1,
+        name: 'Windstorm',
+    };
+
     constructor() {}
 
     ngOnInit(): void {}
