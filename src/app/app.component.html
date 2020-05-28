@@ -1,3 +1,13 @@
 <div class="container">
     <h1 class="display-4">{{ title }}</h1>
+
+    <br />
+
+    <h4>Top Heroes</h4>
+
+    <div class="card-deck">
+        <div class="card" *ngFor="let hero of heroes">
+            <div class="card-body text-center text-capitalize">{{ hero }}</div>
+        </div>
+    </div>
 </div>
