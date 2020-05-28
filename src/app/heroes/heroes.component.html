@@ -1,0 +1,9 @@
+<div class="card-deck">
+    <div class="card" *ngFor="let hero of heroes">
+        <div class="card-body">
+            <h4 class="card-title">{{ hero.name | uppercase }} Details</h4>
+            <p class="card-text">id: {{ hero.id }}</p>
+            <p class="card-text">name: {{ hero.name }}</p>
+        </div>
+    </div>
+</div>
