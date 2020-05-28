@@ -1,18 +1,16 @@
 <h2>My Heroes</h2>
 
-<ul class="list-group">
-    <li
+<div class="list-group">
+    <a
         *ngFor="let hero of heroes"
-        (click)="onSelect(hero)"
-        [class.active]="hero === selectedHero"
+        routerLink="/detail/{{hero.id}}"
+        routerLinkActive="active"        
         class="list-group-item list-group-item-action pointer"
     >
         <span class="badge badge-info p-2">{{ hero.id }}</span>
         <span class="ml-4">{{ hero.name }}</span>
-    </li>
-</ul>
+    </a>
+</div>
 
 <br />
 <br />
-
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
