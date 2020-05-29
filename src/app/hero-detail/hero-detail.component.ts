@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { HeroService } from '../hero.service';
@@ -15,9 +15,10 @@ export class HeroDetailComponent implements OnInit {
     hero: Hero = {} as any;
 
     constructor(
+        private router:Router,
         private route: ActivatedRoute,
         private heroSvc: HeroService,
-        private location: Location
+
     ) {}
 
     ngOnInit(): void {
@@ -29,15 +30,12 @@ export class HeroDetailComponent implements OnInit {
             .subscribe((hero) => (this.hero = hero));
     }
 
-    save(): void {
-        this.heroSvc.updateHero(this.hero).subscribe(() => this.goBack());
+    onSave(): void {
+        this.heroSvc.updateHero(this.hero).subscribe();
+        this.onCancel();
     }
 
-    remove(): void {
-        this.heroSvc.updateHero(this.hero).subscribe(() => this.goBack());
-    }
-
-    goBack(): void {
-        this.location.back();
+    onCancel(): void {
+        this.router.navigate(['..'], { relativeTo: this.route });
     }
 }
