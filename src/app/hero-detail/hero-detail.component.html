@@ -1,18 +1,33 @@
-<ng-container *ngIf="hero">
-    <h2>{{ hero.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{ hero.id }}</div>
+<h2>{{ hero.name | uppercase }} Details</h2>
 
+<form>
     <div class="form-group">
-        <label for="name">name: </label>
+        <label for="id">id</label>
         <input
+            id="id"
+            name="id"
+            type="text"
             class="form-control"
-            id="name"
-            [(ngModel)]="hero.name"
-            placeholder="name"
+            [(ngModel)]="hero.id"
         />
     </div>
-</ng-container>
 
-<button class="btn btn-primary" (click)="goBack()">
-    go back
-</button>
+    <div class="form-group">
+        <label for="name">name</label>
+        <input
+            id="name"
+            name="name"
+            type="text"
+            class="form-control"
+            [(ngModel)]="hero.name"
+        />
+    </div>
+
+    <button type="button" class="btn btn-primary mr-2" (click)="save()">
+        save
+    </button>
+
+    <button type="button" class="btn btn-primary" (click)="goBack()">
+        go back
+    </button>
+</form>
