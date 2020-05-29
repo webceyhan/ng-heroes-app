@@ -15,7 +15,11 @@
                 class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
             >
                 <span>
-                    <img class="rounded-circle" [src]="hero.imageUrl" style="width: 48px;" />
+                    <img
+                        [src]="hero.imageUrl"
+                        class="img-cover rounded-circle"
+                        fallback="/assets/hero.png"
+                    />
                     <span class="ml-4">{{ hero.name }}</span>
                 </span>
 

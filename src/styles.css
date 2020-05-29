@@ -3,3 +3,7 @@
 .pointer {
     cursor: pointer;
 }
+
+.img-cover {
+    object-fit: cover;
+}

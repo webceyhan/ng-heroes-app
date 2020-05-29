@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { ImgFallbackDirective } from './img-fallback.directive';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
         LogsComponent,
         DashboardComponent,
         HeroSearchComponent,
+        ImgFallbackDirective,
     ],
     imports: [
         BrowserModule,
