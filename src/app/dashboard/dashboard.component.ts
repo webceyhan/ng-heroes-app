@@ -15,6 +15,6 @@ export class DashboardComponent implements OnInit {
     constructor(private heroSvc: HeroService) {}
 
     ngOnInit(): void {
-        this.heroes$ = this.heroSvc.getHeroes(5);
+        this.heroes$ = this.heroSvc.getHeroes(3);
     }
 }
