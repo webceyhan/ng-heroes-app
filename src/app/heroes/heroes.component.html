@@ -7,8 +7,6 @@
             </a>
         </div>
 
-
-
         <div class="list-group">
             <a
                 *ngFor="let hero of heroes"
@@ -17,7 +15,7 @@
                 class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
             >
                 <span>
-                    <span class="badge badge-light p-2">{{ hero.id }}</span>
+                    <img class="rounded-circle" [src]="hero.imageUrl" style="width: 48px;" />
                     <span class="ml-4">{{ hero.name }}</span>
                 </span>
 

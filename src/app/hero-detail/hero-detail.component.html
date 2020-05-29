@@ -1,11 +1,13 @@
 <h4>
-    {{ hero.name | uppercase }}
+    {{ hero.name || 'new hero' | uppercase }}
     <span class="text-muted">
-        Details
+        - Details
     </span>
 </h4>
 
-<br />
+<div class="bg-dark img-thumbnail my-4">
+    <img [src]="hero.imageUrl" class="" />
+</div>
 
 <form>
     <div class="form-group">
@@ -28,6 +30,17 @@
             type="text"
             class="form-control"
             [(ngModel)]="hero.name"
+        />
+    </div>
+
+    <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input
+            id="imageUrl"
+            name="imageUrl"
+            type="text"
+            class="form-control"
+            [(ngModel)]="hero.imageUrl"
         />
     </div>
 
