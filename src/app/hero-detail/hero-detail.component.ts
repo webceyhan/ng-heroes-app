@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-hero-detail',
@@ -20,8 +21,12 @@ export class HeroDetailComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        const id = +this.route.snapshot.params.id;
-        this.heroSvc.getHero(id).subscribe((hero) => (this.hero = hero));
+        this.route.params
+            .pipe(
+                map((params) => +params.id),
+                switchMap((id) => this.heroSvc.getHero(id))
+            )
+            .subscribe((hero) => (this.hero = hero));
     }
 
     save(): void {

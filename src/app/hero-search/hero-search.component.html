@@ -14,7 +14,7 @@
     <a
         class="list-group-item list-group-item-action"
         *ngFor="let hero of heroes$ | async"
-        routerLink="/detail/{{ hero.id }}"
+        routerLink="/heroes/{{ hero.id }}"
     >
         {{ hero.name }}
     </a>

@@ -3,7 +3,7 @@
 <div class="d-flex">
     <a
         *ngFor="let hero of heroes$ | async"
-        routerLink="/detail/{{ hero.id }}"
+        routerLink="/heroes/{{ hero.id }}"
         class="btn btn-light btn-lg border-info p-4 m-2"
     >
         {{ hero.name }}

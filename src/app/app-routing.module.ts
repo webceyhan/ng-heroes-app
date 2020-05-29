@@ -9,8 +9,11 @@ import { LogsComponent } from './logs/logs.component';
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
-    { path: 'detail/:id', component: HeroDetailComponent },
-    { path: 'heroes', component: HeroesComponent },
+    {
+        path: 'heroes',
+        component: HeroesComponent,
+        children: [{ path: ':id', component: HeroDetailComponent }],
+    },
     { path: 'logs', component: LogsComponent },
 ];
 

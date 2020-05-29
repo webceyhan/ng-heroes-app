@@ -5,7 +5,7 @@
         <div class="list-group">
             <a
                 *ngFor="let hero of heroes"
-                routerLink="/detail/{{ hero.id }}"
+                routerLink="./{{ hero.id }}"
                 routerLinkActive="active"
                 class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
             >
@@ -34,5 +34,10 @@
         >
             add
         </button>
+
+        <br>
+        <br>
+
+        <router-outlet></router-outlet>
     </div>
 </div>
