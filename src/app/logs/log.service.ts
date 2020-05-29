@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Log } from './log';
+import { Log, LogType } from './log';
 
 @Injectable({
     providedIn: 'root',
@@ -14,14 +14,28 @@ export class LogService {
         return this.logs$.asObservable();
     }
 
-    add(message: string) {
-        const timestamp = new Date().getTime();
-        const log: Log = { message, timestamp };
+    info(message: string): void {
+        this.add(message, 'info');
+    }
 
-        this.logs$.next([...this.logs$.value, log]);
+    warning(message: string): void {
+        this.add(message, 'warning');
+    }
+
+    error(message: string): void {
+        this.add(message, 'error');
     }
 
     clear() {
         this.logs$.next([]);
+    }
+
+    // HELPERS /////////////////////////////////////////////////////////////////////////////////////
+
+    private add(message: string, type: LogType = 'info') {
+        const timestamp = new Date().getTime();
+        const log: Log = { type, message, timestamp };
+
+        this.logs$.next([...this.logs$.value, log]);
     }
 }

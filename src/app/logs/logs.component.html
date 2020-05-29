@@ -6,14 +6,15 @@
 
 <ul class="list-group list-group-flush">
     <li
-        class="list-group-item list-group-item-action"
         *ngFor="let log of logs$ | async"
+        class="list-group-item list-group-item-action"
+        [class.list-group-item-light]="log.type === 'info'"
+        [class.list-group-item-warning]="log.type === 'warning'"
+        [class.list-group-item-danger]="log.type === 'error'"
     >
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between small">
             <samp>{{ log.message }}</samp>
-            <small class="text-muted">{{
-                log.timestamp | date: "medium"
-            }}</small>
+            <span class="text-muted">{{ log.timestamp | date: "medium" }}</span>
         </div>
     </li>
 </ul>
