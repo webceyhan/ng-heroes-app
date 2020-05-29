@@ -1,4 +1,11 @@
-<h2>My Heroes</h2>
+<div class="d-flex justify-content-between align-items-center">
+    <h4>My Heroes</h4>
+    <a class="btn btn-primary" routerLink="./new">
+        Add New Hero
+    </a>
+</div>
+
+<br />
 
 <div class="row">
     <div class="col-6">
@@ -9,10 +16,10 @@
                 routerLinkActive="active"
                 class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
             >
-            <span>
-                <span class="badge badge-info p-2">{{ hero.id }}</span>
-                <span class="ml-4">{{ hero.name }}</span>
-            </span>
+                <span>
+                    <span class="badge badge-info p-2">{{ hero.id }}</span>
+                    <span class="ml-4">{{ hero.name }}</span>
+                </span>
 
                 <button class="btn btn-link" (click)="deleteHero(hero)">
                     x
@@ -22,22 +29,6 @@
     </div>
 
     <div class="col-6">
-        <div class="form-group">
-            <label for="name">Hero name </label>
-            <input id="name" class="form-control" type="text" #heroName />
-        </div>
-
-        <!-- (click) passes input value to add() and then clears the input -->
-        <button
-            class="btn btn-primary"
-            (click)="addHero(heroName.value); heroName.value = ''"
-        >
-            add
-        </button>
-
-        <br>
-        <br>
-
         <router-outlet></router-outlet>
     </div>
 </div>

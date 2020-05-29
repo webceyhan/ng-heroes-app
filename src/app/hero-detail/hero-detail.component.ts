@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { HeroService } from '../hero.service';
 import { Hero } from '../hero';
 import { map, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
     selector: 'app-hero-detail',
@@ -15,23 +16,27 @@ export class HeroDetailComponent implements OnInit {
     hero: Hero = {} as any;
 
     constructor(
-        private router:Router,
+        private router: Router,
         private route: ActivatedRoute,
-        private heroSvc: HeroService,
-
+        private heroSvc: HeroService
     ) {}
 
     ngOnInit(): void {
         this.route.params
             .pipe(
-                map((params) => +params.id),
-                switchMap((id) => this.heroSvc.getHero(id))
+                map((params) => params.id),
+                switchMap((id) => (id ? this.heroSvc.getHero(+id) : of({})))
             )
-            .subscribe((hero) => (this.hero = hero));
+            .subscribe((hero: any) => (this.hero = hero));
     }
 
     onSave(): void {
-        this.heroSvc.updateHero(this.hero).subscribe();
+        if (this.hero.id) {
+            this.heroSvc.updateHero(this.hero).subscribe();
+        } else {
+            this.heroSvc.addHero(this.hero).subscribe();
+        }
+
         this.onCancel();
     }
 
