@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { LogService } from '../log.service';
-import { Log } from '../log';
+import { LogService } from './log.service';
+import { Log } from './log';
 
 @Component({
     selector: 'app-logs',

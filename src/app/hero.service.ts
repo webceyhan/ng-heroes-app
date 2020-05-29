@@ -4,7 +4,7 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { LogService } from './log.service';
+import { LogService } from './logs/log.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
