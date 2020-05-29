@@ -4,7 +4,7 @@ import { Hero } from './hero';
 import { HEROES } from './mock-heroes';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { MessageService } from './message.service';
+import { LogService } from './log.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -13,7 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class HeroService {
     private heroesUrl = 'api/heroes';
 
-    constructor(private http: HttpClient, private messageSvc: MessageService) {}
+    constructor(private http: HttpClient, private logger: LogService) {}
 
     getHeroes(): Observable<Hero[]> {
         this.log('fetched heroes');
@@ -53,7 +53,7 @@ export class HeroService {
             catchError(this.handleError<Hero>('deleteHero'))
         );
     }
-    
+
     searchHeroes(term: string): Observable<Hero[]> {
         if (!term.trim()) {
           // if not search term, return empty hero array.
@@ -69,7 +69,7 @@ export class HeroService {
 
 
     private log(message: string) {
-        this.messageSvc.add('heroService: ' + message);
+        this.logger.add('heroService: ' + message);
     }
 
     private handleError<T>(operation = 'operation', result?: T) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MessageService } from '../message.service';
+import { LogService } from '../log.service';
 import { Observable } from 'rxjs';
+import { Log } from '../log';
 
 @Component({
     selector: 'app-messages',
@@ -9,16 +10,16 @@ import { Observable } from 'rxjs';
 })
 export class MessagesComponent implements OnInit {
 
-    messages$: Observable<string[]>;
+    logs$: Observable<Log[]>;
 
 
-    constructor(private messageSvc: MessageService) {}
+    constructor(private logger: LogService) {}
 
     ngOnInit(): void {
-        this.messages$ = this.messageSvc.list();
+        this.logs$ = this.logger.list();
     }
 
     onClear() {
-        this.messageSvc.clear();
+        this.logger.clear();
     }
 }

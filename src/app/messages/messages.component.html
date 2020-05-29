@@ -1,7 +1,19 @@
-<button class="btn btn-primary" (click)="onClear()">clear</button>
+<div class="d-flex justify-content-end">
+    <button class="btn btn-primary" (click)="onClear()">Clear Logs</button>
+</div>
+
+<br />
 
 <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let message of messages$|async">
-        {{ message }}
+    <li
+        class="list-group-item list-group-item-action"
+        *ngFor="let log of logs$ | async"
+    >
+        <div class="d-flex justify-content-between">
+            <samp>{{ log.message }}</samp>
+            <small class="text-muted">{{
+                log.timestamp | date: "medium"
+            }}</small>
+        </div>
     </li>
 </ul>
