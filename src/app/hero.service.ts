@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
 
 import { Hero } from './hero';
-import { HEROES } from './mock-heroes';
-import { Observable, of } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
 import { LogService } from './logs/log.service';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
     providedIn: 'root',
@@ -15,10 +14,11 @@ export class HeroService {
 
     constructor(private http: HttpClient, private logger: LogService) {}
 
-    getHeroes(): Observable<Hero[]> {
+    getHeroes(limit?: number): Observable<Hero[]> {
         this.log('fetched heroes');
         return this.http.get<Hero[]>(this.heroesUrl).pipe(
             tap(() => this.log('fetched heroes')),
+            map((heroes) => heroes.slice(0, limit)),
             catchError(this.handleError<Hero[]>('getHeroes', []))
         );
     }
@@ -56,17 +56,20 @@ export class HeroService {
 
     searchHeroes(term: string): Observable<Hero[]> {
         if (!term.trim()) {
-          // if not search term, return empty hero array.
-          return of([]);
+            // if not search term, return empty hero array.
+            return of([]);
         }
         return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
-          tap(x => x.length ?
-             this.log(`found heroes matching "${term}"`) :
-             this.log(`no heroes matching "${term}"`)),
-          catchError(this.handleError<Hero[]>('searchHeroes', []))
+            tap((x) =>
+                x.length
+                    ? this.log(`found heroes matching "${term}"`)
+                    : this.log(`no heroes matching "${term}"`)
+            ),
+            catchError(this.handleError<Hero[]>('searchHeroes', []))
         );
-      }
+    }
 
+    // HELPERS /////////////////////////////////////////////////////////////////////////////////////
 
     private log(message: string) {
         this.logger.add('heroService: ' + message);
