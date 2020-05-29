@@ -1,14 +1,14 @@
-<div class="d-flex justify-content-between align-items-center">
-    <h4>My Heroes</h4>
-    <a class="btn btn-primary" routerLink="./new">
-        Add New Hero
-    </a>
-</div>
-
-<br />
-
 <div class="row">
-    <div class="col-6">
+    <div class="col-md-6 mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h4>My Heroes</h4>
+            <a class="btn btn-primary btn-sm mb-2" routerLink="./new">
+                New Hero
+            </a>
+        </div>
+
+
+
         <div class="list-group">
             <a
                 *ngFor="let hero of heroes"
@@ -17,18 +17,18 @@
                 class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
             >
                 <span>
-                    <span class="badge badge-info p-2">{{ hero.id }}</span>
+                    <span class="badge badge-light p-2">{{ hero.id }}</span>
                     <span class="ml-4">{{ hero.name }}</span>
                 </span>
 
-                <button class="btn btn-link" (click)="deleteHero(hero)">
-                    x
+                <button class="btn btn-link btn-sm" (click)="deleteHero(hero)">
+                    <i class="fas fa-times"></i>
                 </button>
             </a>
         </div>
     </div>
 
-    <div class="col-6">
+    <div class="col-md-6">
         <router-outlet></router-outlet>
     </div>
 </div>
