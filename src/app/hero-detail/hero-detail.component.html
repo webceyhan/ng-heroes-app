@@ -1,23 +1,8 @@
-<h4>{{ hero.id ? 'Edit' : 'Create New' }} Hero</h4>
+<h4>{{ hero.id ? "Edit" : "Create New" }} Hero</h4>
 
-<div class="card bg-dark text-light p-1">
-    <div class="row no-gutters">
-        <div class="col-md-4">
-            <img
-                [src]="hero.imageUrl"
-                class="img-cover"
-                fallback="/assets/hero.png"
-            />
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h2 class="card-title">{{ hero.name | uppercase }}</h2>
-            </div>
-        </div>
-    </div>
-</div>
+<app-hero-card [hero]="hero"></app-hero-card>
 
-<br>
+<br />
 
 <form>
     <div class="form-group">
