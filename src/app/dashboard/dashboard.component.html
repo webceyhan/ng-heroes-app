@@ -2,7 +2,7 @@
 
 <div class="d-flex">
     <a
-        *ngFor="let hero of heroes"
+        *ngFor="let hero of heroes$ | async"
         routerLink="/detail/{{ hero.id }}"
         class="btn btn-light btn-lg border-info p-4 m-2"
     >
