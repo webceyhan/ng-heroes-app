@@ -2,11 +2,45 @@
 
 # Tour of Heroes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.  
+Upgraded to version 13.0.0 later.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Deploy to Heroku
+
+In terminal, get inside your project folder by `cd <project-root>`. 
+Bind existing project folder with heroku; `heroku create` which will create an git remote-url called 'heroku'
+
+Below Github action will to deploy to Heroku on every push to master.
+```
+name: Deploy to Heroku
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+```
+
+After deploye to Heroku server, `npm run build` in package.json, will be run automatically and create /dist/<project-name> folder. 
+
+> Make sure to add expressJs to dependencies!
+
+Once the build process was completed, Heroku will execute  `npm start` automatically which refers to `"start": "node server.js"` 
+which will serve the static contents under /dist/<project-name> folder.
 
 ## Code scaffolding
 
