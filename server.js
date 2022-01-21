@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const rootDir = __dirname + "/dist/heroes";
+const rootDir = __dirname + "/dist/ng-heroes";
 
 app.use(express.static(rootDir));
 
