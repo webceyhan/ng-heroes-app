@@ -2,12 +2,14 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const rootDir = __dirname + "/dist/ng-heroes";
 
-app.use(express.static(rootDir));
+const PORT = process.env.PORT || 8080;
+const ROOT_DIR = __dirname + "/dist/ng-heroes";
+
+app.use(express.static(ROOT_DIR));
 
 app.get("/*", function (req, res) {
-    res.sendFile(path.join(rootDir + "/index.html"));
+    res.sendFile(path.join(ROOT_DIR + "/index.html"));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(PORT, () => console.log(`server started at: http://localhost:${PORT}`));
