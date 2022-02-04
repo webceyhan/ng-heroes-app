@@ -43,7 +43,7 @@ and `npm` package manager first.
 
 1. Clone the repository.
     ```sh
-    git clone https://github.com/webceyhan/readme-template.git
+    git clone https://github.com/webceyhan/ng-heroes-app.git
     ```
 2. Get inside the cloned project folder.
     ```sh
@@ -68,7 +68,7 @@ npm run test        # run the test suits
 npm run build       # build for production
 ```
 
-> Take a look at the other scripts in [`package.json`](https://github.com/webceyhan/readme-template/blob/master/package.json)
+> Take a look at the other scripts in [`package.json`](https://github.com/webceyhan/ng-heroes-app/blob/main/package.json)
 
 <br>
 <!-- DEVELOPMENT //////////////////// -->
@@ -121,7 +121,7 @@ A built-in Github Action will automatically deploy the project to Heroku on ever
     on:
         push:
             branches:
-                - master
+                - main
     jobs:
         build:
             runs-on: ubuntu-latest
