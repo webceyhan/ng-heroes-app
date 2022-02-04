@@ -1,64 +1,144 @@
+<!-- AUTOMATION BADGES -->
+
 [![CodeQL](https://github.com/webceyhan/ng-heroes/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-heroes/actions/workflows/codeql-analysis.yml)
 [![Deploy to Heroku](https://github.com/webceyhan/ng-heroes/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-heroes/actions/workflows/heroku.yml)
 
-# Tour of Heroes
+<!-- HEADER ///////////////////////////////////////////////////////////// -->
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.  
-Upgraded to version 13.0.0 later.
+# Angular Tour of Heroes Application
 
-## Development server
+This is a sample application based on the famous tutorial `Tour of Heroes` from the official Angular Framework website.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[View Demo](https://webceyhan-ng-heroes.herokuapp.com) |
+[Report Issue](https://github.com/webceyhan/ng-heroes/issues) |
+[Request Feature](https://github.com/webceyhan/ng-heroes/pulls) |
+[@webceyhan](https://twitter.com/webceyhan)
 
-## Deploy to Heroku
+<br>
+<!-- BUILT WITH ///////////////////// -->
 
-In terminal, get inside your project folder by `cd <project-root>`. 
-Bind existing project folder with heroku; `heroku create` which will create an git remote-url called 'heroku'
+### Built With
 
-Below Github action will to deploy to Heroku on every push to master.
+-   [Node.js](https://nodejs.dev/)
+-   [Express](https://expressjs.com/)
+-   [TypeScript](https://www.typescriptlang.org)
+-   [Angular](https://angular.io/)
+-   [Bootstrap](https://getbootstrap.com)
+
+<br>
+<!-- PREREQUISITES /////////////////////////////////////////////////////// -->
+
+## Prerequisites
+
+You need to install the [Node.js](https://nodejs.dev/)
+and `npm` package manager first.
+
+> Recommended IDE:
+> [VSCode](https://code.visualstudio.com/) + [Angular Essentials](https://marketplace.visualstudio.com/items?itemName=johnpapa.angular-essentials)
+
+<br>
+<!-- INSTALLATION //////////////////////////////////////////////////////// -->
+
+## Installation
+
+1. Clone the repository.
+    ```sh
+    git clone https://github.com/webceyhan/readme-template.git
+    ```
+2. Get inside the cloned project folder.
+    ```sh
+    cd <project folder>
+    ```
+3. Install NPM packages.
+    ```sh
+    npm install
+    ```
+
+<br>
+<!-- USAGE /////////////////////////////////////////////////////////////// -->
+
+## Usage
+
+You can use following commands to do various task with the project.
+
+```sh
+npm start           # serve the app for production
+npm run serve       # serve the app for development
+npm run test        # run the test suits
+npm run build       # build for production
 ```
-name: Deploy to Heroku
 
-on:
-  push:
-    branches:
-      - master
+> Take a look at the other scripts in [`package.json`](https://github.com/webceyhan/readme-template/blob/master/package.json)
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-```
+<br>
+<!-- DEVELOPMENT //////////////////// -->
 
-After deploye to Heroku server, `npm run build` in package.json, will be run automatically and create /dist/<project-name> folder. 
+## Development
 
-> Make sure to add expressJs to dependencies!
+Run `ng serve` for a dev server.
+Navigate to `http://localhost:4200`.
+The app will automatically reload if you change any of the source files.
 
-Once the build process was completed, Heroku will execute  `npm start` automatically which refers to `"start": "node server.js"` 
-which will serve the static contents under /dist/<project-name> folder.
+<br>
+<!-- TESTING //////////////////////// -->
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
+## Testing
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+<br>
+<!-- BUILDING /////////////////////// -->
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Building
+
+Run `ng build` to build the project.
+The build artifacts will be stored in the `dist/` directory.
+Use the `--prod` flag for a production build.
+
+<br>
+<!-- DEPLOYMENT ///////////////////// -->
+
+## Deployment (Heroku)
+
+There is a built-in Github Action which automatically deploys the project to Heroku on every push.
+Follow the steps below and it will be deployed automatically on every push.
+
+1. Create an [Heroku](https://www.heroku.com/home) account.
+
+2. Install the heroku-cli as shown in the [guide](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli).
+
+3. Create a new Heroku app inside the project folder to bind it.
+    ```sh
+    heroku create
+    ```
+
+    > This will create a new application on Heroku server and bind it to your project by adding a remote `heroku` upstream to your git repository.
+
+4. Setup the repository secrets on your github as shown below:
+    ```yaml
+    name: Deploy to Heroku
+    on:
+        push:
+            branches:
+                - master
+    jobs:
+        build:
+            runs-on: ubuntu-latest
+            steps:
+                - uses: actions/checkout@v2
+                - uses: akhileshns/heroku-deploy@v3.12.12
+                with:
+                    heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                    heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+                    heroku_email: ${{secrets.HEROKU_EMAIL}}
+    ```
+
+<br>
+<!-- REFERENCES ////////////////////////////////////////////////////////// -->
+
+## References
+
+-   [Heroku](https://www.heroku.com)
+-   [GitHub Actions](https://docs.github.com/en/actions)
