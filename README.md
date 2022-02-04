@@ -7,7 +7,7 @@
 
 # Angular Tour of Heroes Application
 
-This is a sample application based on the famous tutorial `Tour of Heroes` from the official Angular Framework website.
+This is a sample application based on the famous tutorial `Tour of Heroes` from the official Angular website, which covers many aspects of the Angular Framework.
 
 [View Demo](https://webceyhan-ng-heroes.herokuapp.com) |
 [Report Issue](https://github.com/webceyhan/ng-heroes/issues) |
@@ -15,9 +15,9 @@ This is a sample application based on the famous tutorial `Tour of Heroes` from 
 [@webceyhan](https://twitter.com/webceyhan)
 
 <br>
-<!-- BUILT WITH ///////////////////// -->
+<!-- BUILT WITH ////////////////////////////////////////////////////////// -->
 
-### Built With
+## Built With
 
 -   [Node.js](https://nodejs.dev/)
 -   [Express](https://expressjs.com/)
@@ -102,8 +102,7 @@ Use the `--prod` flag for a production build.
 
 ## Deployment (Heroku)
 
-There is a built-in Github Action which automatically deploys the project to Heroku on every push.
-Follow the steps below and it will be deployed automatically on every push.
+A built-in Github Action will automatically deploy the project to Heroku on every push.
 
 1. Create an [Heroku](https://www.heroku.com/home) account.
 
