@@ -1,3 +1,4 @@
+[![CodeQL](https://github.com/webceyhan/ng-heroes/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-heroes/actions/workflows/codeql-analysis.yml)
 [![Deploy to Heroku](https://github.com/webceyhan/ng-heroes/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-heroes/actions/workflows/heroku.yml)
 
 # Tour of Heroes
