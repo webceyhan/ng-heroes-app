@@ -1,7 +1,7 @@
 <!-- AUTOMATION BADGES -->
 
-[![CodeQL](https://github.com/webceyhan/ng-heroes/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-heroes/actions/workflows/codeql-analysis.yml)
-[![Deploy to Heroku](https://github.com/webceyhan/ng-heroes/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-heroes/actions/workflows/heroku.yml)
+[![CodeQL](https://github.com/webceyhan/ng-heroes-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-heroes-app/actions/workflows/codeql-analysis.yml)
+[![Deploy to Heroku](https://github.com/webceyhan/ng-heroes-app/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-heroes-app/actions/workflows/heroku.yml)
 
 <!-- HEADER ///////////////////////////////////////////////////////////// -->
 
@@ -9,9 +9,9 @@
 
 This is a sample application based on the famous tutorial `Tour of Heroes` from the official Angular website, which covers many aspects of the Angular Framework.
 
-[View Demo](https://webceyhan-ng-heroes.herokuapp.com) |
-[Report Issue](https://github.com/webceyhan/ng-heroes/issues) |
-[Request Feature](https://github.com/webceyhan/ng-heroes/pulls) |
+[View Demo](https://webceyhan-ng-heroes-app.herokuapp.com) |
+[Report Issue](https://github.com/webceyhan/ng-heroes-app/issues) |
+[Request Feature](https://github.com/webceyhan/ng-heroes-app/pulls) |
 [@webceyhan](https://twitter.com/webceyhan)
 
 <br>
