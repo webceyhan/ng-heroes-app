@@ -13,7 +13,9 @@ jobs:
             - name: Install and Build
               run: |
                   npm ci
-                  npm run build
+                  npm run build -- --base-href /ng-heroes-app/
+                  touch dist/ng-heroes-app/.nojekyll
+                  echo 'ceyhan.cloud' > dist/ng-heroes-app/CNAME
 
             - name: Deploy
               uses: JamesIves/github-pages-deploy-action@v4.4.3
