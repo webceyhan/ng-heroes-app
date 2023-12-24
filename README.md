@@ -1,22 +1,15 @@
 <!-- AUTOMATION BADGES -->
 
-[![CodeQL](https://github.com/webceyhan/ng-heroes-app/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/webceyhan/ng-heroes-app/actions/workflows/codeql-analysis.yml)
-[![Deploy to Heroku](https://github.com/webceyhan/ng-heroes-app/actions/workflows/heroku.yml/badge.svg)](https://github.com/webceyhan/ng-heroes-app/actions/workflows/heroku.yml)
+[![CodeQL](https://github.com/webceyhan/ng-heroes-app/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/webceyhan/ng-heroes-app/actions/workflows/github-code-scanning/codeql)
 
 <!-- LOGO (OPTIONAL) -->
 <img src="./src/assets/hero.png" width="100px">
-
 
 <!-- HEADER ///////////////////////////////////////////////////////////// -->
 
 # Angular Tour of Heroes Application
 
 This is a sample application based on the famous tutorial `Tour of Heroes` from the official Angular website, which covers many aspects of the Angular Framework.
-
-[View Demo](https://webceyhan-ng-heroes-app.herokuapp.com) |
-[Report Issue](https://github.com/webceyhan/ng-heroes-app/issues) |
-[Request Feature](https://github.com/webceyhan/ng-heroes-app/pulls) |
-[@webceyhan](https://twitter.com/webceyhan)
 
 <br>
 <!-- REQUIREMENTS /////////////////////////////////////////////////////// -->
@@ -94,28 +87,13 @@ Use the `--configuration production` flag for a production build.
 <br>
 <!-- DEPLOYMENT ////////////////////////////////////////////////////////// -->
 
-## Deployment (Heroku)
+## Deployment (GitHub Pages)
 
-A GitHub Action will automatically deploy the project to Heroku on every push. 
-> See the details in [.github/workflows/heroku.yml](./.github/workflows/heroku.yml)
+A GitHub Action will automatically deploy the project to GitHub Pages on every push.
 
-1. Create an [Heroku](https://www.heroku.com/home) account.
+The workflow will build the project using npm and output the result to the `dist` folder which will be then pushed to the `gh-pages` branch.
 
-2. Install the `heroku-cli` as shown in the [guide](https://devcenter.heroku.com/articles/heroku-cli#install-the-heroku-cli).
-
-3. Create a new Heroku app inside the project folder to bind it.
-    ```sh
-    heroku create
-    ```
-
-    > This will create a new application on Heroku server and bind it to your project by adding a remote `heroku` upstream to your git repository.
-
-4. Set the following secrets on your Github repository:
-    ```sh
-    HEROKU_API_KEY
-    HEROKU_APP_NAME
-    HEROKU_EMAIL
-    ```
+> See the details in [.github/workflows/deploy.yml](./.github/workflows/deploy.yml)
 
 <br>
 <!-- REFERENCES ////////////////////////////////////////////////////////// -->
@@ -126,6 +104,3 @@ A GitHub Action will automatically deploy the project to Heroku on every push.
 -   [Angular](https://angular.io/)
 -   [Bootstrap](https://getbootstrap.com)
 -   [TypeScript](https://www.typescriptlang.org)
--   [GitHub Actions](https://docs.github.com/en/actions)
-    -   [Heroku](https://www.heroku.com)
-    -   [heroku-deploy](https://github.com/akhileshns/heroku-deploy@)
