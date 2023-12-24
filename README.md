@@ -87,13 +87,11 @@ Use the `--configuration production` flag for a production build.
 <br>
 <!-- DEPLOYMENT ////////////////////////////////////////////////////////// -->
 
-## Deployment (GitHub Pages)
+## Deployment (Render)
 
-A GitHub Action will automatically deploy the project to GitHub Pages on every push.
+Project is linked to [Render](https://render.com/) for deployment.
 
-The workflow will build the project using npm and output the result to the `dist` folder which will be then pushed to the `gh-pages` branch.
-
-> See the details in [.github/workflows/deploy.yml](./.github/workflows/deploy.yml)
+> It will automatically deploy the project to Render on every push.
 
 <br>
 <!-- REFERENCES ////////////////////////////////////////////////////////// -->
