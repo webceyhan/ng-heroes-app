@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-    Observable,
-    of,
-    BehaviorSubject,
-    Subject,
-    combineLatest,
-    ReplaySubject,
-} from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { catchError, tap, map, switchMap } from 'rxjs/operators';
 
 import { Hero } from './hero';
