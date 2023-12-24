@@ -13,58 +13,58 @@ export class DataService implements InMemoryDbService {
                 id: 1,
                 name: 'Superman',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_Superman_20190116_5c3fc2758f6a12.25513240.jpg?itok=RsWdMSw6',
+                    'https://static.dc.com/2023-02/Char_WhosWho_Superman_20190116_5c3fc71f524f38.28405711.jpg?w=184',
             },
             {
                 id: 2,
                 name: 'Batman',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_Batman_20190116_5c3fc4b40faec2.47318964.jpg?itok=wIPTW6Lq',
+                    'https://static.dc.com/2023-02/Char_WhosWho_Batman_20190116_5c3fc4b40faf04.59002472.jpg?w=184',
             },
             {
                 id: 3,
                 name: 'Wonder Woman',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_WonderWoman_20190116_5c3fc6aa51d0e3.49076914.jpg?itok=dkBqiwvo',
+                    'https://static.dc.com/2023-02/Char_WhosWho_WonderWoman_20190116_5c3fc6aa51d124.25659603.jpg?w=184',
             },
             {
                 id: 4,
                 name: 'Green Lantern',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_GreenLantern_20190116_5c3fc8c14ceda8.50076512.jpg?itok=VR8bn0Si',
+                    'https://static.dc.com/2023-02/Char_WhosWho_GreenLantern20200721_5f173adcedb982.94529743.jpg?w=184',
             },
             {
                 id: 5,
                 name: 'The Flash',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_Flash_20190116_5c3fcaaa18f0e8.03668117.jpg?itok=VCHiwig6',
+                    'https://static.dc.com/2023-02/Char_WhosWho_Flash_20190116_5c3fcadbc6a963.74676553.jpg?w=184',
             },
             {
                 id: 6,
                 name: 'Aquaman',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_Aquaman_5c411a95e71072.35445903.jpg?itok=NrW14I8l',
+                    'https://static.dc.com/2023-02/Char_WhosWho_Aquaman_5c411a95e710b9.62155274.jpg?w=184',
             },
             {
                 id: 7,
                 name: 'Cyborg',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_Cyborg_20190116_5c3fcd9048a161.67999729.jpg?itok=hKl0IkJX',
+                    'https://static.dc.com/2023-02/Char_WhosWho_Cyborg_20190116_5c3fcd9048a1a2.67778180.jpg?w=184',
             },
             {
                 id: 8,
                 name: 'Black Manta',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_BlackManta_5c1023b79ab113.73450328.jpg?itok=9Wl6rPOr',
+                    'https://static.dc.com/dc/files/default_images/Char_Thumb_BlackManta_5c1023f0360dc3.11295654.jpg?w=640',
             },
             {
                 id: 9,
                 name: 'Harley Quinn',
                 imageUrl:
-                    'https://www.dccomics.com/sites/default/files/styles/character_thumb_160x160/public/Char_Profile_HarleyQuinn_5c4a3e75812334.21707976.jpg?itok=xMb85MG1',
+                    'https://static.dc.com/dc/files/default_images/Char_Thumb_HarleyQuinn_5c4a3e758122a3.39576701.jpg?w=640',
             },
         ];
-        
+
         return { heroes };
     }
 
